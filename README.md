@@ -8,10 +8,10 @@ TODO
 
 TODO
 
-| Bus Pirate | IKEA Sensor
-|:---|:---
-| Data In (MISO) | REST
-| GND | GND
+| Bus Pirate | IKEA Sensor | Wire Colour
+|:---|:--:|:---
+| Data In (MISO) | REST | Blue
+| GND | GND | Black
 
 http://dangerousprototypes.com/docs/UART
 
