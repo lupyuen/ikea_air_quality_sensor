@@ -237,6 +237,8 @@ To validate the Checksum, all 20 bytes must add up to 0.
 
 [(And this)](https://community.home-assistant.io/t/ikea-vindriktning-air-quality-sensor/324599)
 
+[(ESPHome Source Code)](https://github.com/esphome/esphome/blob/dev/esphome/components/pm1006/pm1006.cpp#L57-L96)
+
 [(Arduino Source Code)](https://github.com/Hypfer/esp8266-vindriktning-particle-sensor/blob/master/src/SerialCom.h#L26-L63)
 
 # Connect to Apache NuttX OS and PineDio Stack BL604
