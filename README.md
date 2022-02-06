@@ -17,6 +17,8 @@ We expose the UART Port on IKEA Sensor by soldering these pads...
 | UART Tx | REST | Blue
 | GND | GND | Black
 
+[See the soldering steps](https://twitter.com/MisterTechBlog/status/1489506811321282565?t=uW3yDgeLLXhf4x3wjmC2HA&s=19)
+
 [(More details)](https://style.oversubstance.net/2021/08/diy-use-an-ikea-vindriktning-air-quality-sensor-in-home-assistant-with-esphome/)
 
 # Test with Bus Pirate
