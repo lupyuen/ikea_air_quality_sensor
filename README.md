@@ -4,9 +4,20 @@
 
 Follow the updates on Twitter: https://twitter.com/MisterTechBlog/status/1490147828458405889
 
+# Solder UART Port on IKEA Sensor
+
+We expose the UART Port on IKEA Sensor by soldering these pads...
+
+| UART Pin | IKEA Sensor | Wire Colour
+|:---|:--:|:---
+| UART Tx | REST | Blue
+| GND | GND | Black
+
+[(More details)](https://style.oversubstance.net/2021/08/diy-use-an-ikea-vindriktning-air-quality-sensor-in-home-assistant-with-esphome/)
+
 # Test with Bus Pirate
 
-Connect Bus Pirate to IKEA Sensor...
+Let's sniff the UART Port with Bus Pirate. Connect Bus Pirate to IKEA Sensor as follows...
 
 | Bus Pirate | IKEA Sensor | Wire Colour
 |:---|:--:|:---
