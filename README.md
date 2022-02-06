@@ -75,11 +75,15 @@ POWER SUPPLIES ON
 Clutch engaged!!!
 ```
 
+[Watch the demo on YouTube](https://youtu.be/QOJF6hAhFv4)
+
 See below for the ASCII and Binary Logs.
 
 ## ASCII Log
 
 ASCII Log of UART Output from IKEA Sensor...
+
+[Watch the demo on YouTube](https://youtu.be/QOJF6hAhFv4)
 
 ```text
 UART>(2)
