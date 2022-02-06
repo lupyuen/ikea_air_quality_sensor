@@ -24,8 +24,6 @@ Let's sniff the UART Port with Bus Pirate. Connect Bus Pirate to IKEA Sensor as 
 | Data In (MISO) | REST | Blue
 | GND | GND | Black
 
-[(More about Bus Pirate interfacing with UART)](http://dangerousprototypes.com/docs/UART)
-
 Enter these Bus Pirate commands to capture the UART output from IKEA Sensor...
 
 ```text
@@ -89,6 +87,8 @@ Clutch engaged!!!
 [Watch the demo on YouTube](https://youtu.be/QOJF6hAhFv4)
 
 See below for the ASCII and Binary Logs.
+
+[(More about Bus Pirate interfacing with UART)](http://dangerousprototypes.com/docs/UART)
 
 ## ASCII Log
 
