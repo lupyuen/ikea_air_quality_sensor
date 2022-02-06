@@ -2,7 +2,11 @@
 
 (And visualised with Prometheus and Grafana)
 
-Follow the updates on Twitter: https://twitter.com/MisterTechBlog/status/1490147828458405889
+[__Follow the updates and pics on Twitter__](https://twitter.com/MisterTechBlog/status/1490147828458405889)
+
+I found the VINDRIKTNING sensor at my local IKEA Store (IKEA Tampines Singapore), in the Lighting Section, near the Air Purifiers.
+
+(Wow IKEA has Air Purifiers now)
 
 # Solder UART Port on IKEA Sensor
 
@@ -232,6 +236,18 @@ To validate the Checksum, all 20 bytes must add up to 0.
 [(And this)](https://community.home-assistant.io/t/ikea-vindriktning-air-quality-sensor/324599)
 
 [(Arduino Source Code)](https://github.com/Hypfer/esp8266-vindriktning-particle-sensor/blob/master/src/SerialCom.h#L26-L63)
+
+# Connect to Apache NuttX OS and PineDio Stack BL604
+
+TODO
+
+# Connect to LoRaWAN and The Things Network
+
+TODO
+
+# Visualise with Prometheus and Grafana
+
+TODO
 
 # References
 
