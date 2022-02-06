@@ -208,6 +208,31 @@ UART>
 
 [(Another binary log)](https://gist.github.com/lupyuen/ebe4c0628fc9ea2e124e6f00d8246b49)
 
+# Decode Sensor Data
+
+Based on the [PM1006 Datasheet](https://github.com/arendst/Tasmota/files/7083662/PM1006_LED_PARTICLE_SENSOR_MODULE_SPECIFICATIONS.pdf), we decode the Sensor Data (20 bytes) as follows...
+
+```text
+Header:   0x16 0x11 0x0B
+Unused:   0x00 0x00
+PM2.5:    0x00 0x36
+Unused:   0x00 0x00 0x03 0x32 0x00 0x00
+Unused:   0x00 0x34 0x01 0x00 0x00 0x00
+Checksum: 0x2E
+```
+
+[(Source)](https://gist.github.com/lupyuen/db0c97b12bd1070e17cd2e570a5aa810#file-ikea-binary-log-L7705-L7743)
+
+This gives the PM2.5 value of 54 (0x0036).
+
+To validate the Checksum, all 20 bytes must add up to 0.
+
+[(More details)](https://github.com/arendst/Tasmota/issues/13012)
+
+[(And this)](https://community.home-assistant.io/t/ikea-vindriktning-air-quality-sensor/324599)
+
+[(Arduino Source Code)](https://github.com/Hypfer/esp8266-vindriktning-particle-sensor/blob/master/src/SerialCom.h#L26-L63)
+
 # References
 
 -   ["Use an IKEA VINDRIKTNING air quality sensor in Home Assistant with ESPHome"](https://style.oversubstance.net/2021/08/diy-use-an-ikea-vindriktning-air-quality-sensor-in-home-assistant-with-esphome/)
