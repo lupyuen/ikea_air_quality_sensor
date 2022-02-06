@@ -189,7 +189,7 @@ READ: 0x00
 UART>
 ```
 
-[(See the coomplete log)](https://gist.github.com/lupyuen/db0c97b12bd1070e17cd2e570a5aa810)
+[(See the complete log)](https://gist.github.com/lupyuen/db0c97b12bd1070e17cd2e570a5aa810)
 
 [(Another binary log)](https://gist.github.com/lupyuen/ebe4c0628fc9ea2e124e6f00d8246b49)
 
