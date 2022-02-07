@@ -352,7 +352,7 @@ nsh> gps
 16  11  0b  00  00  00  2e  00  00  03  1c  00  00  00  2c  01  00  00  00  54
 ```
 
-Yep we see the 20 bytes of Sensor Data!
+Yep we see the 20-byte frames of Sensor Data, and the PM 2.5 encoded inside!
 
 # Connect to LoRaWAN and The Things Network
 
