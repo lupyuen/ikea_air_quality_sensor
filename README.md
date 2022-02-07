@@ -2,15 +2,15 @@
 
 [__Follow the updates and pics on Twitter__](https://twitter.com/MisterTechBlog/status/1490147828458405889)
 
--   Let's transmit the PM 2.5 Sensor Data from IKEA VINDRIKTNING Air Quality Sensor to The Things Network (via LoRaWAN) 
+Let's transmit the PM 2.5 Sensor Data from IKEA VINDRIKTNING Air Quality Sensor to The Things Network (via LoRaWAN)...
 
 -   We'll transmit the data with the IKEA Sensor connected to PineDio Stack BL604 running Apache NuttX OS
 
 -   We'll visualise the Sensor Data with Prometheus and Grafana
 
--   I found the VINDRIKTNING sensor at my local IKEA Store (IKEA Tampines Singapore), in the Lighting Section, near the Air Purifiers.
+I found the VINDRIKTNING sensor at my local IKEA Store (IKEA Tampines Singapore), in the Lighting Section, near the Air Purifiers.
 
-    (Wow IKEA has Air Purifiers now)
+(Wow IKEA has Air Purifiers now)
 
 [Watch the IKEA Sensor on YouTube](https://youtu.be/wyXb3aSPet4)
 
