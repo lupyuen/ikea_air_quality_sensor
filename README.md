@@ -8,6 +8,8 @@ I found the VINDRIKTNING sensor at my local IKEA Store (IKEA Tampines Singapore)
 
 (Wow IKEA has Air Purifiers now)
 
+[Watch the IKEA Sensor on YouTube](https://youtu.be/wyXb3aSPet4)
+
 # Solder UART Port on IKEA Sensor
 
 We expose the UART Port on IKEA Sensor by soldering these pads...
@@ -315,6 +317,8 @@ nsh> cat /dev/ttyS1
                              -+Y
                                 -+Y
 ```
+
+[Watch the demo on YouTube](https://youtu.be/iFf8_f7ExUI)
 
 To see the binary data, modify the GPS Demo App: [gps_main.c](https://github.com/lupyuen/incubator-nuttx-apps/blob/master/examples/gps/gps_main.c)...
 
