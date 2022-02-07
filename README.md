@@ -275,6 +275,8 @@ Enable cat:
 
 Build and flash NuttX OS to PineDio Stack BL604.
 
+IKEA Sensor is now connected to NuttX OS at `/dev/ttyS1`
+
 # Test with Apache NuttX OS
 
 Enter these NuttX commands to read the UART port and dump the data...
