@@ -243,13 +243,17 @@ To validate the Checksum, all 20 bytes must add up to 0.
 
 # Connect to PineDio Stack BL604
 
-Connect the IKEA Sensor to [PineDio Stack BL604](https://lupyuen.github.io/articles/pinedio)...
+To transmit the PM 2.5 readings to The Things Network via LoRaWAN, we connect the IKEA Sensor to [PineDio Stack BL604](https://lupyuen.github.io/articles/pinedio)...
 
 | Function | GPIO | PineDio Stack | IKEA Sensor | Wire Colour
 | :---: | :---: | :---: | :---: | :---:
 | RX | GPIO 3 | 14 | REST | Blue
 | TX | GPIO 4 | 13 | Unused |
 | GND | GND | 20 | GND | Black
+
+PineDio Stack BL604 has a onboard Semtech SX1262 LoRa Transceiver, so it talks to LoRaWAN and The Things Network.
+
+[(More about LoRaWAN On PineDio Stack)](https://lupyuen.github.io/articles/lorawan3)
 
 # Test with Apache NuttX OS
 
