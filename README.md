@@ -328,7 +328,7 @@ cnt = 0;
 do
   {
     read(fd, &ch, 1);
-    //  Insert this line to dump the binary data:
+    //  Insert this line to dump the data in hex:
     printf("%02x  ", ch);
 ```
 
