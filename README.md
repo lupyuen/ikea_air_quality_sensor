@@ -255,13 +255,23 @@ PineDio Stack BL604 has a onboard Semtech SX1262 LoRa Transceiver, so it talks t
 
 [(More about LoRaWAN On PineDio Stack)](https://lupyuen.github.io/articles/lorawan3)
 
+# Configure Apache NuttX OS
+
+Enable UART1:
+- Click "System Type → BL602 Peripheral Support"
+- Check "UART1"
+
+Set to 9600 bps:
+- Click "Device Drivers → Serial Driver Support → UART1 Configuration"
+- Set "BAUD rate" to 9600
+
+Enable cat:
+- Click "Application Configuration → NSH Library → Disable Individual commands"
+- Uncheck "Disable cat"
+
+Build and flash NuttX OS to PineDio Stack BL604.
+
 # Test with Apache NuttX OS
-
-Configure UART OS on Apache NuttX OS...
-
--   Enable UART1
--   Set UART1 to 9600 bps
--   Enable "cat" Command
 
 Enter these NuttX commands to read the UART port and dump the data...
 
@@ -318,7 +328,7 @@ nsh> gps
 16  11  0b  00  00  00  2e  00  00  03  1c  00  00  00  2c  01  00  00  00  54
 ```
 
-Yep we see the 20 bytes of data!
+Yep we see the 20 bytes of Sensor Data!
 
 # Connect to LoRaWAN and The Things Network
 
