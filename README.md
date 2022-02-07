@@ -30,6 +30,8 @@ Let's sniff the UART Port with Bus Pirate. Connect Bus Pirate to IKEA Sensor as 
 | Data In (MISO) | REST | Blue
 | GND | GND | Black
 
+Connect USB Ports of IKEA Sensor and Bus Pirate to the same computer. Remember: Only One Power Source!
+
 Enter these Bus Pirate commands to capture the UART output from IKEA Sensor (9600 bps, 8 bits, no parity, 1 stop bit)...
 
 ```text
@@ -250,6 +252,8 @@ To transmit the PM 2.5 readings to The Things Network via LoRaWAN, we connect th
 | RX | GPIO 3 | 14 | REST | Blue
 | TX | GPIO 4 | 13 | Unused |
 | GND | GND | 20 | GND | Black
+
+Connect USB Ports of IKEA Sensor and PineDio Stack BL604 to the same computer. Remember: Only One Power Source!
 
 PineDio Stack BL604 has a onboard Semtech SX1262 LoRa Transceiver, so it talks to LoRaWAN and The Things Network.
 
