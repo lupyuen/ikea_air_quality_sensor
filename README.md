@@ -241,7 +241,20 @@ To validate the Checksum, all 20 bytes must add up to 0.
 
 [(Arduino Source Code)](https://github.com/Hypfer/esp8266-vindriktning-particle-sensor/blob/master/src/SerialCom.h#L26-L63)
 
-# Connect to Apache NuttX OS and PineDio Stack BL604
+# Connect to PineDio Stack BL604
+
+Connect the IKEA Sensor to [PineDio Stack BL604](https://lupyuen.github.io/articles/pinedio)...
+
+| Function | GPIO | PineDio Stack | IKEA Sensor | Wire Colour
+| :---: | :---: | :---: | :---: | :---:
+| RX | GPIO 3 | 14 | REST | Blue
+| TX | GPIO 4 | 13 | Unused |
+| GND | GND | 20 | GND | Black
+
+# Test with Apache NuttX OS
+
+-   Enable UART1
+-   Enable "cat" Command
 
 TODO
 
