@@ -30,7 +30,7 @@ Let's sniff the UART Port with Bus Pirate. Connect Bus Pirate to IKEA Sensor as 
 | Data In (MISO) | REST | Blue
 | GND | GND | Black
 
-Enter these Bus Pirate commands to capture the UART output from IKEA Sensor...
+Enter these Bus Pirate commands to capture the UART output from IKEA Sensor (9600 bps, 8 bits, no parity, 1 stop bit)...
 
 ```text
 HiZ>m
