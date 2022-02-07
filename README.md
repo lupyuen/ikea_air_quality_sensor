@@ -233,7 +233,7 @@ Checksum: 0x2E
 
 [(Source)](https://gist.github.com/lupyuen/db0c97b12bd1070e17cd2e570a5aa810#file-ikea-binary-log-L7705-L7743)
 
-This gives the PM 2.5 value of 54 (0x0036).
+This gives the PM 2.5 value of 54 (`0x0036`).
 
 To validate the Checksum, all 20 bytes must add up to 0.
 
@@ -357,6 +357,8 @@ nsh> gps
 ```
 
 Yep we see the 20-byte frames of Sensor Data, and the PM 2.5 encoded inside!
+
+PM 2.5 = 46 (`0x002e`)
 
 # Connect to LoRaWAN and The Things Network
 
