@@ -308,7 +308,19 @@ nsh> cat /dev/ttyS1
                                 -+Y
 ```
 
-To see the binary data, run the modified GPS Demo App...
+To see the binary data, modify the GPS Demo App: [gps_main.c](https://github.com/lupyuen/incubator-nuttx-apps/blob/master/examples/gps/gps_main.c)...
+
+```c
+/* Read until we complete a line */
+cnt = 0;
+do
+  {
+    read(fd, &ch, 1);
+    //  Insert this line to dump the binary data:
+    printf("%02x  ", ch);
+```
+
+Build and run the modified GPS Demo App...
 
 ```text
 nsh> gps
