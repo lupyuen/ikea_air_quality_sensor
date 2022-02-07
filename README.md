@@ -229,7 +229,7 @@ Checksum: 0x2E
 
 [(Source)](https://gist.github.com/lupyuen/db0c97b12bd1070e17cd2e570a5aa810#file-ikea-binary-log-L7705-L7743)
 
-This gives the PM2.5 value of 54 (0x0036).
+This gives the PM 2.5 value of 54 (0x0036).
 
 To validate the Checksum, all 20 bytes must add up to 0.
 
@@ -253,10 +253,68 @@ Connect the IKEA Sensor to [PineDio Stack BL604](https://lupyuen.github.io/artic
 
 # Test with Apache NuttX OS
 
+Configure UART OS on Apache NuttX OS...
+
 -   Enable UART1
+-   Set UART1 to 9600 bps
 -   Enable "cat" Command
 
-TODO
+Enter these NuttX commands to read the UART port and dump the data...
+
+```text
+nsh> ls /dev
+/dev:
+ console
+ gpio0
+ gpio1
+ gpio2
+ null
+ spi0
+ spitest0
+ timer0
+ ttyS1
+ urandom
+ zero
+nsh> cat /dev/ttyS1
+
+3(1>
+    2'0A
+        2%0C
+            1$/F
+                .,T
+                   .,T
+                      .
+                       .,V
+                          .,V
+                             -+Y
+                                -+Y
+```
+
+To see the binary data, run the modified GPS Demo App...
+
+```text
+nsh> gps
+00  00  
+16  11  0b  00  00  00  39  00  00  03  39  00  00  00  37  01  00  00  00  21  
+16  11  0b  00  00  00  2b  00  00  03  17  00  00  00  29  01  00  00  00  5f  
+16  11  0b  00  00  00  32  00  00  03  26  00  00  00  30  01  00  00  00  42 
+16  11  0b  00  00  00  31  00  00  03  24  00  00  00  2f  01  00  00  00  46  
+16  11  0b  00  00  00  31  00  00  03  24  00  00  00  2f  01  00  00  00  46  
+16  11  0b  00  00  00  31  00  00  03  23  00  00  00  2f  01  00  00  00  47  
+16  11  0b  00  00  00  31  00  00  03  22  00  00  00  2f  01  00  00  00  48  
+16  11  0b  00  00  00  30  00  00  03  21  00  00  00  2e  01  00  00  00  4b  
+16  11  0b  00  00  00  2f  00  00  03  1f  00  00  00  2d  01  00  00  00  4f  
+16  11  0b  00  00  00  2f  00  00  03  1f  00  00  00  2d  01  00  00  00  4f  
+16  11  0b  00  00  00  2f  00  00  03  1f  00  00  00  2d  01  00  00  00  4f  
+16  11  0b  00  00  00  2f  00  00  03  1e  00  00  00  2d  01  00  00  00  50  
+16  11  0b  00  00  00  2f  00  00  03  1e  00  00  00  2d  01  00  00  00  50  
+16  11  0b  00  00  00  2f  00  00  03  1d  00  00  00  2d  01  00  00  00  51  
+16  11  0b  00  00  00  2e  00  00  03  1c  00  00  00  2c  01  00  00  00  54  
+16  11  0b  00  00  00  2e  00  00  03  1c  00  00  00  2c  01  00  00  00  54  
+16  11  0b  00  00  00  2e  00  00  03  1c  00  00  00  2c  01  00  00  00  54
+```
+
+Yep we see the 20 bytes of data!
 
 # Connect to LoRaWAN and The Things Network
 
