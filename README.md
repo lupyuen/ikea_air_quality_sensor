@@ -261,16 +261,22 @@ PineDio Stack BL604 has a onboard Semtech SX1262 LoRa Transceiver, so it talks t
 
 # Configure Apache NuttX OS
 
+We configure the UART Port on Apache NuttX OS...
+
+```bash
+make menuconfig
+```
+
 Enable UART1:
-- Click "System Type → BL602 Peripheral Support"
+- Select "System Type → BL602 Peripheral Support"
 - Check "UART1"
 
 Set to 9600 bps:
-- Click "Device Drivers → Serial Driver Support → UART1 Configuration"
+- Select "Device Drivers → Serial Driver Support → UART1 Configuration"
 - Set "BAUD rate" to 9600
 
-Enable cat:
-- Click "Application Configuration → NSH Library → Disable Individual commands"
+Enable `cat`:
+- Select "Application Configuration → NSH Library → Disable Individual commands"
 - Uncheck "Disable cat"
 
 Build and flash NuttX OS to PineDio Stack BL604.
