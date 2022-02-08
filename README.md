@@ -14,6 +14,45 @@ I found the VINDRIKTNING sensor at my local IKEA Store (IKEA Tampines Singapore)
 
 [Watch the IKEA Sensor on YouTube](https://youtu.be/wyXb3aSPet4)
 
+# Install App
+
+To add this repo to your NuttX project...
+
+```bash
+## TODO: Change this to the path of our "incubator-nuttx-apps/examples" folder
+pushd nuttx/apps/examples
+git submodule add https://github.com/lupyuen/ikea_air_quality_sensor
+popd
+```
+
+Then update the NuttX Build Config...
+
+```bash
+## TODO: Change this to the path of our "incubator-nuttx" folder
+cd nuttx/nuttx
+
+## Preserve the Build Config
+cp .config ../config
+
+## Erase the Build Config and Kconfig files
+make distclean
+
+## For BL602: Configure the build for BL602
+./tools/configure.sh bl602evb:nsh
+
+## For ESP32: Configure the build for ESP32.
+## TODO: Change "esp32-devkitc" to our ESP32 board.
+./tools/configure.sh esp32-devkitc:nsh
+
+## Restore the Build Config
+cp ../config .config
+
+## Edit the Build Config
+make menuconfig 
+```
+
+In menuconfig, enable the IKEA Air Quality Sensor App under "Application Configuration" → "Examples".
+
 # Solder UART Port on IKEA Sensor
 
 We expose the UART Port on IKEA Sensor by soldering these pads...
