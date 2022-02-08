@@ -53,6 +53,30 @@ make menuconfig
 
 In menuconfig, enable the IKEA Air Quality Sensor App under "Application Configuration" → "Examples".
 
+# Configure Apache NuttX OS
+
+We configure the UART Port on Apache NuttX OS...
+
+```bash
+make menuconfig
+```
+
+Enable UART1:
+- Select "System Type → BL602 Peripheral Support"
+- Check "UART1"
+
+Set to 9600 bps:
+- Select "Device Drivers → Serial Driver Support → UART1 Configuration"
+- Set "BAUD rate" to 9600
+
+Enable `cat`:
+- Select "Application Configuration → NSH Library → Disable Individual commands"
+- Uncheck "Disable cat"
+
+Build and flash NuttX OS to PineDio Stack BL604.
+
+IKEA Sensor is now connected to NuttX OS at `/dev/ttyS1`
+
 # Solder UART Port on IKEA Sensor
 
 We expose the UART Port on IKEA Sensor by soldering these pads...
@@ -303,30 +327,6 @@ Connect USB Ports of IKEA Sensor and PineDio Stack BL604 to the same computer. R
 PineDio Stack BL604 has a onboard Semtech SX1262 LoRa Transceiver, so it talks to LoRaWAN and The Things Network.
 
 [(More about LoRaWAN On PineDio Stack)](https://lupyuen.github.io/articles/lorawan3)
-
-# Configure Apache NuttX OS
-
-We configure the UART Port on Apache NuttX OS...
-
-```bash
-make menuconfig
-```
-
-Enable UART1:
-- Select "System Type → BL602 Peripheral Support"
-- Check "UART1"
-
-Set to 9600 bps:
-- Select "Device Drivers → Serial Driver Support → UART1 Configuration"
-- Set "BAUD rate" to 9600
-
-Enable `cat`:
-- Select "Application Configuration → NSH Library → Disable Individual commands"
-- Uncheck "Disable cat"
-
-Build and flash NuttX OS to PineDio Stack BL604.
-
-IKEA Sensor is now connected to NuttX OS at `/dev/ttyS1`
 
 # Test with Apache NuttX OS
 

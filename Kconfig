@@ -1,0 +1,29 @@
+#
+# For a description of the syntax of this configuration file,
+# see the file kconfig-language.txt in the NuttX tools repository.
+#
+
+config EXAMPLES_IKEA_AIR_QUALITY_SENSOR
+	tristate "IKEA Air Quality Sensor App"
+	default n
+	---help---
+		Enable the IKEA Air Quality Sensor App
+
+if EXAMPLES_IKEA_AIR_QUALITY_SENSOR
+
+config EXAMPLES_IKEA_AIR_QUALITY_SENSOR_PROGNAME
+	string "Program name"
+	default "ikea_air_quality_sensor"
+	---help---
+		This is the name of the program that will be used when the NSH ELF
+		program is installed.
+
+config EXAMPLES_IKEA_AIR_QUALITY_SENSOR_PRIORITY
+	int "IKEA Air Quality Sensor task priority"
+	default 100
+
+config EXAMPLES_IKEA_AIR_QUALITY_SENSOR_STACKSIZE
+	int "IKEA Air Quality Sensor stack size"
+	default DEFAULT_TASK_STACKSIZE
+
+endif
