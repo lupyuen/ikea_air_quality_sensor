@@ -90,9 +90,65 @@ We expose the UART Port on IKEA Sensor by soldering these pads...
 
 [(More details)](https://style.oversubstance.net/2021/08/diy-use-an-ikea-vindriktning-air-quality-sensor-in-home-assistant-with-esphome/)
 
+# Connect to PineDio Stack BL604
+
+To transmit the PM 2.5 readings to The Things Network via LoRaWAN, we connect the IKEA Sensor to [PineDio Stack BL604](https://lupyuen.github.io/articles/pinedio)...
+
+| Function | GPIO | PineDio Stack | IKEA Sensor | Wire Colour
+| :---: | :---: | :---: | :---: | :---:
+| RX | GPIO 3 | 14 | REST | Blue
+| TX | GPIO 4 | 13 | Unused |
+| GND | GND | 20 | GND | Black
+
+Connect USB Ports of IKEA Sensor and PineDio Stack BL604 to the same computer. Remember: Only One Power Source!
+
+PineDio Stack BL604 has a onboard Semtech SX1262 LoRa Transceiver, so it talks to LoRaWAN and The Things Network.
+
+[(More about LoRaWAN On PineDio Stack)](https://lupyuen.github.io/articles/lorawan3)
+
+# Output Log
+
+Run the following command to test the IKEA Sensor on NuttX OS...
+
+```text
+nsh> ikea_air_quality_sensor
+16  11  0b  00  00  00  17  00  00  02  ff  00  00  00  21  02  00  00  0b  88
+Got PM2.5 Concentration: 23 µg/m³
+16  11  0b  00  00  00  17  00  00  02  ff  00  00  00  21  02  00  00  0b  88
+Got PM2.5 Concentration: 23 µg/m³
+16  11  0b  00  00  00  18  00  00  03  04  00  00  00  22  02  00  00  0b  80
+Got PM2.5 Concentration: 24 µg/m³
+16  11  0b  00  00  00  18  00  00  03  04  00  00  00  22  02  00  00  0b  80
+Got PM2.5 Concentration: 24 µg/m³
+16  11  0b  00  00  00  18  00  00  03  04  00  00  00  22  02  00  00  0b  80
+Got PM2.5 Concentration: 24 µg/m³
+16  11  0b  00  00  00  18  00  00  03  03  00  00  00  22  02  00  00  0b  81
+Got PM2.5 Concentration: 24 µg/m³
+16  11  0b  00  00  00  18  00  00  03  02  00  00  00  22  02  00  00  0b  82
+Got PM2.5 Concentration: 24 µg/m³
+16  11  0b  00  00  00  18  00  00  03  02  00  00  00  22  02  00  00  0b  82
+Got PM2.5 Concentration: 24 µg/m³
+16  11  0b  00  00  00  18  00  00  03  02  00  00  00  22  02  00  00  0b  82
+Got PM2.5 Concentration: 24 µg/m³
+16  11  0b  00  00  00  18  00  00  03  04  00  00  00  22  02  00  00  0b  80
+Got PM2.5 Concentration: 24 µg/m³
+16  11  0b  00  00  00  18  00  00  03  04  00  00  00  22  02  00  00  0b  80
+Got PM2.5 Concentration: 24 µg/m³
+16  11  0b  00  00  00  18  00  00  03  03  00  00  00  22  02  00  00  0b  81
+Got PM2.5 Concentration: 24 µg/m³
+16  11  0b  00  00  00  18  00  00  03  03  00  00  00  22  02  00  00  0b  81
+Got PM2.5 Concentration: 24 µg/m³
+16  11  0b  00  00  00  18  00  00  03  02  00  00  00  22  02  00  00  0b  82
+Got PM2.5 Concentration: 24 µg/m³
+16  11  0b  00  00  00  17  00  00  03  01  00  00  00  21  02  00  00  0b  85
+Got PM2.5 Concentration: 23 µg/m³
+16  11  0b  00  00  00  17  00  00  03  00  00  00  00  21  02  00  00  0b  86
+Got PM2.5 Concentration: 23 µg/m³
+```
+
 # Test with Bus Pirate
 
-Let's sniff the UART Port with Bus Pirate. Connect Bus Pirate to IKEA Sensor as follows...
+Before testing with Apache NuttX OS, we sniffed the IKEA Sensor's UART Port with Bus Pirate. Connect Bus Pirate to IKEA Sensor as follows...
 
 | Bus Pirate | IKEA Sensor | Wire Colour
 |:---|:--:|:---
@@ -312,25 +368,9 @@ To validate the Checksum, all 20 bytes must add up to 0.
 
 [(Arduino Source Code)](https://github.com/Hypfer/esp8266-vindriktning-particle-sensor/blob/master/src/SerialCom.h#L26-L63)
 
-# Connect to PineDio Stack BL604
-
-To transmit the PM 2.5 readings to The Things Network via LoRaWAN, we connect the IKEA Sensor to [PineDio Stack BL604](https://lupyuen.github.io/articles/pinedio)...
-
-| Function | GPIO | PineDio Stack | IKEA Sensor | Wire Colour
-| :---: | :---: | :---: | :---: | :---:
-| RX | GPIO 3 | 14 | REST | Blue
-| TX | GPIO 4 | 13 | Unused |
-| GND | GND | 20 | GND | Black
-
-Connect USB Ports of IKEA Sensor and PineDio Stack BL604 to the same computer. Remember: Only One Power Source!
-
-PineDio Stack BL604 has a onboard Semtech SX1262 LoRa Transceiver, so it talks to LoRaWAN and The Things Network.
-
-[(More about LoRaWAN On PineDio Stack)](https://lupyuen.github.io/articles/lorawan3)
-
 # Test with Apache NuttX OS
 
-Enter these NuttX commands to read the UART port and dump the data...
+Here's a quick way to test the IKEA Sensor with NuttX OS. Enter these NuttX commands to read the UART port and dump the data...
 
 ```text
 nsh> ls /dev
