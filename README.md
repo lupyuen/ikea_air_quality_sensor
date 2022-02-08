@@ -55,7 +55,7 @@ In menuconfig, enable the IKEA Air Quality Sensor App under "Application Configu
 
 # Configure Apache NuttX OS
 
-We configure the UART Port on Apache NuttX OS...
+We configure the UART Port on Apache NuttX OS for the IKEA Sensor...
 
 ```bash
 make menuconfig
@@ -145,6 +145,8 @@ Got PM2.5 Concentration: 23 µg/m³
 16  11  0b  00  00  00  17  00  00  03  00  00  00  00  21  02  00  00  0b  86
 Got PM2.5 Concentration: 23 µg/m³
 ```
+
+[Watch the demo on YouTube](https://youtu.be/dUHlG67pB3M)
 
 # Test with Bus Pirate
 
