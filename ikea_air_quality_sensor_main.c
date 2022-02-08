@@ -48,7 +48,7 @@ int main(int argc, FAR char *argv[]) {
 
     //  Open the UART port
     int fd = open("/dev/ttyS1", O_RDONLY);
-    if (fd < 0) { printf("Unable to open file /dev/ttyS1\n"); return 1; }
+    if (fd < 0) { printf("Unable to open /dev/ttyS1\n"); return 1; }
 
     //  Forever process bytes from the UART port
     for (;;) {
@@ -93,7 +93,7 @@ static bool frame_is_valid(void) {
     //  All bytes must add to 0 (because of checksum at the last byte)
     if (sum != 0) {
         //  Invalid checksum
-        printf("PM1006 checksum is wrong: %02x, expected zero\n", sum);
+        printf("\nPM1006 checksum is wrong: %02x, expected zero\n", sum);
         return false;
     }
 
@@ -108,7 +108,7 @@ static void process_frame(void) {
     //  In the datasheet, index 3..6 is called DF1-DF4
     //  http://www.jdscompany.co.kr/download.asp?gubun=07&filename=PM1006_LED_PARTICLE_SENSOR_MODULE_SPECIFICATIONS.pdf
     const int pm_2_5_concentration = frame[5] * 256 + frame[6];
-    printf("Got PM2.5 Concentration: %d µg/m³\n", pm_2_5_concentration);
+    printf("\nGot PM2.5 Concentration: %d µg/m³\n", pm_2_5_concentration);
 
     //  TODO: Transmit the sensor data
 }
