@@ -55,7 +55,7 @@ int main(int argc, FAR char *argv[]) {
         //  Read a byte from the UART port
         char ch;
         read(fd, &ch, 1);
-        printf("%02x  ", ch); ////
+        printf("%02x  ", ch);
 
         //  Append to response frame after shifting the bytes.
         //  We always append bytes to the frame (instead of replacing bytes)
@@ -105,7 +105,7 @@ static bool frame_is_valid(void) {
 static void process_frame(void) {
     //  frame[3..4] is unused
     //  frame[5..6] is our PM2.5 reading
-    //  In the datasheet, index 3..6 is called DF1-DF4
+    //  In the datasheet, frame[3..6] is called DF1-DF4:
     //  http://www.jdscompany.co.kr/download.asp?gubun=07&filename=PM1006_LED_PARTICLE_SENSOR_MODULE_SPECIFICATIONS.pdf
     const int pm_2_5_concentration = frame[5] * 256 + frame[6];
     printf("\nGot PM2.5 Concentration: %d µg/m³\n", pm_2_5_concentration);
