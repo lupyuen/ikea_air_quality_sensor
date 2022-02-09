@@ -1,6 +1,8 @@
 # IKEA VINDRIKTNING Air Quality Sensor connected to LoRaWAN and The Things Network with Apache NuttX OS
 
-[__Follow the updates and pics on Twitter__](https://twitter.com/MisterTechBlog/status/1490147828458405889)
+Read the article...
+
+-   ["Connect IKEA Air Quality Sensor to Apache NuttX OS"](https://lupyuen.github.io/articles/ikea)
 
 Let's transmit the PM 2.5 Sensor Data from IKEA VINDRIKTNING Air Quality Sensor to The Things Network (via LoRaWAN)...
 
